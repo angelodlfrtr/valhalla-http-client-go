@@ -7,6 +7,12 @@ import (
 	"github.com/valyala/fasthttp"
 )
 
+// Point define a geographical point
+type ElevationPoint struct {
+	Lon float64 `json:"lon"`
+	Lat float64 `json:"lat"`
+}
+
 // Elevationinput is the input for elevation service
 type ElevationInput struct {
 	// Range if true, both the height and cumulative distance are returned for each point.
@@ -27,7 +33,7 @@ type ElevationInput struct {
 	// and the locations are visited in the order specified.
 	// The input coordinates can come from many input sources, such as a GPS location,
 	// a point or a click on a map, a geocoding service, and so on.
-	Shape []*Point `json:"shape,omitempty"`
+	Shape []*ElevationPoint `json:"shape,omitempty"`
 
 	// ShapeFormat specifies whether the polyline is encoded with 6 digit precision (polyline6)
 	// or 5 digit precision (polyline5).
@@ -47,7 +53,7 @@ type ElevationInput struct {
 // ElevationOutput is the output for elevation service
 type ElevationOutput struct {
 	// Shape contain the specified shape coordinates from the input request.
-	Shape []*Point `json:"shape,omitempty"`
+	Shape []*ElevationPoint `json:"shape,omitempty"`
 
 	// EncodedPolyline contain the specified encoded polyline,
 	// with six degrees of precision, coordinates from the input request.
