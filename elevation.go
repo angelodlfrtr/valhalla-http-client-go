@@ -59,6 +59,9 @@ type ElevationOutput struct {
 
 	// Height contain an array of height for the associated latitude, longitude coordinates.
 	Height []float32 `json:"height,omitempty"`
+
+	// ID specified specified in input request
+	ID *string `json:"id,omitempty"`
 }
 
 // Elevation returns the elevation for the given input
