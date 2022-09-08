@@ -9,11 +9,11 @@ import (
 func TestElevation(t *testing.T) {
 	input := &ElevationInput{
 		HeightPrecision: ptr.Int(2),
-		Shape:           []*Point{},
+		Shape:           []*ElevationPoint{},
 	}
 
-	input.Shape = append(input.Shape, &Point{Lat: 42.913581, Lon: 0.137267})
-	input.Shape = append(input.Shape, &Point{Lat: 42.913612, Lon: 0.137234})
+	input.Shape = append(input.Shape, &ElevationPoint{Lat: 42.913581, Lon: 0.137267})
+	input.Shape = append(input.Shape, &ElevationPoint{Lat: 42.913612, Lon: 0.137234})
 
 	clt := getTestClient()
 
