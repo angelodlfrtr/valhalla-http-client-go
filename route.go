@@ -1092,7 +1092,7 @@ func (client *Client) Route(input *RouteInput) (*RouteOutput, error) {
 	// Extract response
 	output := &RouteOutput{}
 	if err := json.Unmarshal(resp.Body(), output); err != nil {
-		return nil, fmt.Errorf("error while decoding http elevation json response data: %w", err)
+		return nil, fmt.Errorf("error while decoding http route json response data: %w", err)
 	}
 
 	return output, nil
