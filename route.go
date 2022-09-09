@@ -544,6 +544,9 @@ type RouteOutputLeg struct {
 
 	// Maneuvers a list of maneuvers.
 	Maneuvers []*RouteOutputManeuver `json:"maneuvers,omitempty"`
+
+	// Shape an encoded polyline of the route path (with 6 digits decimal precision).
+	Shape *string `json:"shape,omitempty"`
 }
 
 type RouteOutputTrip struct {
@@ -555,9 +558,6 @@ type RouteOutputTrip struct {
 
 	// Summary summary of the trip.
 	Summary *RouteOutputTripSummary `json:"summary,omitempty"`
-
-	// Shape an encoded polyline of the route path (with 6 digits decimal precision).
-	Shape *string `json:"shape,omitempty"`
 }
 
 type RouteOutput struct {
